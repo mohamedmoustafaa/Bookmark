@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container pt-2" >
+    <h1 class="text-center">Bookmark</h1>
+    <hr>
+    <div class="my-5 py-4 text-center form-card">
+        <h2>Bookmark Your Favorite Websites</h2>
+        <div class="form-group mx-5">
+            <label class="text-start fw-bold w-100" for="uname">Site Name</label>
+            <input type="text" name="uname" id="uname" class="form-control" placeholder="Enter Site Name">
+            <div class="alert alert-danger d-none py-3 mt-2" role="alert">
+                name must start with capital letter and have at least 3 characters
+              </div>
+        </div>
+        <div class="form-group mx-5 mt-3 ">
+            <label class="text-start fw-bold w-100" for="url">Site URL</label>
+            <input  type="text" name="url" id="url" class="form-control" placeholder="Enter Site URL">
+            <div class="alert alert-danger d-none py-3 mt-2" role="alert">
+                please enter a valid url
+              </div>
+        </div>
+        <button class="btn btn-primary mt-3 px-5 " id="addBtn">Submit</button>
+    </div>
+    <input id="search" oninput="searchBookmarks(this.value)" type="search" class="form-control my-3" placeholder="Search by Bookmark name ...">
+
+    <div class="output">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Site Name</th>
+                    <th>Update</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody id="tableData">
+              <!-- <tr>
+                <td>1</td>
+                    <td> Name</td>
+                    <td><p class="btn btn-primary"><i class="fa-solid fa-pen"></i> Update</p></td>
+                    <td><p class="btn btn-warning"><i class="fa-regular fa-eye"></i> Visit</p></td>
+                    <td><p class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</p></td>
+              </tr> -->
+              <!-- <tr > <td colspan="5">No Match</td> </tr> -->
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal -->
+<div id="modal"
+class="box-info position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none"
+>
+<div class="box-conent bg-white p-4 rounded-2 shadow-lg">
+  <header
+    class="box-header w-100 d-flex justify-content-between align-items-center mb-4"
+  >
+    <div class="circles d-flex">
+      <span class="rounded-circle me-2"></span>
+      <span class="rounded-circle me-2"></span>
+      <span class="rounded-circle me-2"></span>
+    </div>
+    <button class="btn border-0" id="closeBtn">
+      <i class="fa-solid fa-xmark close fs-3"></i>
+    </button>
+  </header>
+  <p class="m-0 pb-2">
+    Site Name or Url is not valid, Please follow the rules below :
+  </p>
+  <ol class="rules list-unstyled m-0">
+    <li>
+      <i class="fa-regular fa-circle-right p-2"></i>Site name must
+      contain at least 3 characters
+    </li>
+    <li>
+      <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+      valid one
+    </li>
+  </ol>
+</div>
+</div>
+<hr/>
+<footer>
+    <p class="text-muted text-center">&copy; 2023 Bookmark</p>
+</footer>
+
+<div>
+  <p class="position-relative d-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quae non vitae dolore, omnis beatae molestiae, eos sapiente velit veniam unde facere. Voluptatum dolore pariatur asperiores quidem animi recusandae illum. 
+    <span class="bg-primary position-fixed start-0 top-50">Lorem, ipsum dolor.</span>
+  </p>
+</div>
+
+    <!-- Bootstrap js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Main js -->
+    <script src="js/script.js"></script>  
+</body>
+</html>
